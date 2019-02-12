@@ -39,7 +39,7 @@ class binding overrides class attribute
 
 public messageClasses = {
     "testClass": true,
-    "anotherClass":
+    "anotherClass": false
 }
 
 [ngClass]="messageClasses"
@@ -48,3 +48,44 @@ Event Binding
 
 Template -> Event Binding -> Class
 Class -> Data Binding -> Template
+
+#myInput inside template to bind it to method --> template reference variable //logs the whole element i.e., <input type="text">
+
+2-way binding
+  <input [(ngModel)]="name" type="text">[] for property binding-class to view, and () for event binding-view to class
+    {{name}}
+    ngModel is part of FormsModule so we have to import it separately
+
+<ng-template> is a container for other elements
+
+Structural Directives - ngIf(*ngIf="true"), false will remove the element from DOM(different from display:none as we can still see the element in the DOM)
+
+[ngSwitch]="color"
+
+*ngFor=""
+
+parent component -> @Input() -> child component
+child component -> @Output() -> parent component
+import input./output from angular core
+
+
+String
+{{name | lowercase}} //saikat
+{{name | uppercase}} //SAIKAT
+{{name | titlecase}} //Saikat Saha
+{{name | slice:3:5}} //ka
+{{name | json}} {name: 'Saikat', surname: 'Saha'}
+
+Number
+{{5.678 | number:'1.2-3'}} //5.678
+{{5.678 | number:'3.4-5'}} //005.6780
+{{5.678 | number:'3.1-2'}} //005.68
+
+{{0.25 | percent}} //25%
+{{0.25 | currency}} //$0.25
+{{0.25 | currency: 'GBP'}} //L0.25
+{{0.25 | currency: 'GBP': 'code'}} //GBP0.25
+
+{{date | date: 'short'}}
+{{date | date: 'shortDate'}}
+{{date | date: 'shortTime'}}
