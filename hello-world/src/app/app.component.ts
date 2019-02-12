@@ -9,9 +9,16 @@ import { Component } from '@angular/core';
 	{{greetUser()}} - 
 	<input [id]="myId" type="text" value="Saikat"> - 
 	<input id="{{myId}}" type="text" value="Saikat">
-	</div>`,
+
+	
+	</div><app-test></app-test> `,
 	//styleUrls: ['./app.component.css']
-	styles: [`div { color : orange}>`]
+	styles: [`
+				div { color : orange}
+				.text-success { color: green }
+				.text-danger { color: red }
+				.text-special { font-style: italic }	
+			`]
 })
 export class AppComponent {
 	public name = "Saikat Saha";
