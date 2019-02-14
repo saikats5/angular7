@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { TestService } from '../test.service';
 
 @Component({
   selector: 'app-test',
@@ -44,6 +45,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
     <h2>{{"Hello " + parentData}}</h2>
     <button (click)="fireEvent()">Send Event to parent</button>
 
+    <div>MY DETAILS FROM SERVICES --- {{myDetails.id}} --- {{myDetails.name}}</div>
+
   `,
   styleUrls: ['./test.component.css']
 })
@@ -52,6 +55,8 @@ export class TestComponent implements OnInit {
   public color = "blue";
   public greeting = "";
   public colors = ['green', 'orange', 'yellow', 'pink', 'purple', 'violet'];
+
+  public myDetails = [];
 
   @Input() public parentData;
   // @Input('parentData') public name;
@@ -62,9 +67,10 @@ export class TestComponent implements OnInit {
     this.childEvent.emit('Hey child to parent event...');
   }
 
-  constructor() { }
+  constructor(private _getDetailData: TestService) { }
 
   ngOnInit() {
+    this.myDetails = this._getDetailData.getDetails();
   }
 
   onClick(event){
