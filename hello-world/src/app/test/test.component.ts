@@ -45,7 +45,8 @@ import { TestService } from '../test.service';
     <h2>{{"Hello " + parentData}}</h2>
     <button (click)="fireEvent()">Send Event to parent</button>
 
-    <div>MY DETAILS FROM SERVICES --- {{myDetails.id}} --- {{myDetails.name}}</div>
+    
+    <div *ngFor="let detail of myDetails">MY DETAILS FROM SERVICES --- {{detail.id}} --- {{detail.name}}</div>
 
   `,
   styleUrls: ['./test.component.css']
