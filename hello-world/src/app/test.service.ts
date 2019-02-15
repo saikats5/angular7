@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Details } from './dataInterface';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TestService {
+  private _url: string = '../assets/dummyData1.json';
 
-  constructor() { }
-  getDetails(){
-    return [
-      {id: '1', name: 'Saikat'},
-      {id: '2', name: 'John'},
-      {id: '3', name: 'Martin'}
-    ]
+  constructor(private http: HttpClient) { }
+  getDetails(): Observable<Details[]>{
+    return this.http.get<Details[]>(this._url)
   }
 }

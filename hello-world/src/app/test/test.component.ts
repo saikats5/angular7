@@ -71,7 +71,9 @@ export class TestComponent implements OnInit {
   constructor(private _getDetailData: TestService) { }
 
   ngOnInit() {
-    this.myDetails = this._getDetailData.getDetails();
+    //this.myDetails = this._getDetailData.getDetails();
+    this._getDetailData.getDetails()
+      .subscribe(data => {this.myDetails = data; console.log("1111111111111111",this.myDetails);});
   }
 
   onClick(event){

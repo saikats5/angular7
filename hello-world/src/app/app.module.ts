@@ -6,15 +6,23 @@ import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
 
 import { TestService } from './test.service';
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app/app-routing.module';
+
+import { IdComponent, CityComponent } from './app/app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent
+    TestComponent,
+    IdComponent,
+    CityComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [TestService],
   bootstrap: [AppComponent]
