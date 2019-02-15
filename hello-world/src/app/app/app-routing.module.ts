@@ -5,6 +5,9 @@ import { CityComponent } from '../city/city.component';
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 
 const routes: Routes = [
+  //{ path: '', component: IdComponent },
+  //{ path: '', redirectTo: '/id', pathMatch: 'prefix' },
+  { path: '', redirectTo: '/id', pathMatch: 'full' },
   { path: 'id', component: IdComponent },
   { path: 'city', component: CityComponent },
   { path: '**', component: PageNotFoundComponent }
