@@ -7,16 +7,13 @@ import { TestComponent } from './test/test.component';
 
 import { TestService } from './test.service';
 import { HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from './app/app-routing.module';
-
-import { IdComponent, CityComponent } from './app/app-routing.module';
+import { AppRoutingModule, routingComponents } from './app/app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
-    IdComponent,
-    CityComponent
+    routingComponents
   ],
   imports: [
     BrowserModule,

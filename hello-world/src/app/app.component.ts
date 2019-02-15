@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
 	//selector: '.app-root',//class
 	//selector: '[app-root]', //attribute
 	//templateUrl: './app.component.html',
-	template: `<div>{{name}} - 
+ 	template: `<div>{{name}} - 
 	{{greetUser()}} - 
 	<input [id]="myId" type="text" value="Saikat"> - 
 	<input id="{{myId}}" type="text" value="Saikat"> 
