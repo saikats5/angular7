@@ -47,6 +47,9 @@ import { TestService } from '../test.service';
 
     
     <div *ngFor="let detail of myDetails">MY DETAILS FROM SERVICES --- {{detail.id}} --- {{detail.name}}</div>
+    
+    <a routerLink="/id">ID ROUTE</a>
+    <a routerLink="/city">CITY ROUTE</a>
     <router-outlet></router-outlet>
   `,
   styleUrls: ['./test.component.css']
